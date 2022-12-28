@@ -101,7 +101,8 @@ select option{
 .todo-select{
     margin: 0 auto;
     width: 100%;
-    color: dimgrey;
+    color: #2f9dec;
+    background-color: #fff;
     padding: .6rem;
     letter-spacing: 3px;    
     cursor: pointer;
