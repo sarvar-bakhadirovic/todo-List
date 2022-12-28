@@ -1,0 +1,418 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    background-image: linear-gradient(80deg, #2f9dec 10%, #00fffb 90%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 2rem;
+    width: 30%;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.todo-input, 
+.todo-button{
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size: 1rem;
+    transition: all .3s ease;
+}
+
+.todo-input{
+    min-width: 20rem;
+    color: #2f9dec;
+}
+.todo-input::placeholder{
+    color: rgba(47, 157, 236, 0.6);
+}
+
+.todo-button{
+    background-color: #2f9dec;
+    color: white;
+    cursor: pointer;
+}
+.todo-button:hover{
+    background-color: white;
+    color: #2f9dec;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+select option{
+    color: dimgrey;
+    background-color: transparent;
+}
+.select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 20px auto;
+    width: 23%;
+    cursor: pointer;
+}
+.select::after{
+    content: '\25BC';
+    background-color: #2f9dec;
+    color: white;
+    padding: .32rem;
+    pointer-events: none;
+    position: absolute;
+    right: 0px;
+    transition: all .4s ease;
+}
+.select:hover::after{
+    background-color: white;
+    color: #2f9dec;
+}
+
+.todo-select{
+    margin: 0 auto;
+    width: 100%;
+    color: dimgrey;
+    padding: .6rem;
+    letter-spacing: 3px;    
+    cursor: pointer;
+}
+
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 30%;
+    margin: 50px 0 0 0;
+}
+.todo-item{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: .5rem;
+    border-radius: 6px;
+    border: 2px solid #2f9dec;
+    background: #fff;
+    color: #2f9dec;
+    transition: all .5s ease;
+}
+.todo-li{
+    flex: 1;
+    padding-left: .4rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.todo-item button{
+    padding: .2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.fa-square-check,
+.fa-square,
+.fa-trash {
+    pointer-events: none;
+}
+
+.fa-square{
+    color: #000000;
+}
+.fa-trash{
+    color: #ff0000;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: .5;
+}
+.deleted{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+@media screen and (max-width: 2560px){
+    header{
+        font-size: 2rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 30%;
+    }
+    .todo-input{
+        min-width: 100%;
+    }
+    .select{
+        width: 32%;
+    }
+    .todo-list{
+        width: 32%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    header{
+        font-size: 2rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 30%;
+    }
+    .todo-input{
+        min-width: 100%;
+    }
+    .select{
+        width: 32%;
+    }
+    .todo-list{
+        width: 33%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    header{
+        font-size: 2rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 40%;
+    }
+    .todo-input{
+        min-width: 100%;
+    }
+    .select{
+        width: 43%;
+    }
+    .todo-list{
+        width: 45%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px){
+    header{
+        font-size: 1.5rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 40%;
+    }
+    .todo-input{
+        min-width: 100%;
+    }
+    .select{
+        width: 44%;
+    }
+    .todo-list{
+        width: 50%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    header{
+        font-size: 1.5rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 40%;
+    }
+    .todo-input{
+        min-width: 100%;
+    }
+    .select{
+        width: 44%;
+    }
+    .todo-list{
+        width: 50%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    header{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 60%;
+    }
+    .todo-input{
+        min-width: 100%;
+    }
+    .select{
+        width: 64%;
+    }
+    .todo-list{
+        width: 60%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    header{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 70%;
+    }
+    .todo-input{
+        min-width: 100%;
+    }
+    .select{
+        width: 75%;
+    }
+    .todo-list{
+        width: 70%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    header{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 70%;
+    }
+    .todo-input{
+        min-width: 100%;
+    }
+    .select{
+        width: 76%;
+    }
+    .todo-list{
+        width: 85%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 426px){
+    header{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 90%;
+    }
+    .todo-input{
+        min-width: 90%;
+    }
+    .select{
+        width: 88%;
+    }
+    .todo-list{
+        width: 90%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 376px){
+    header{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 90%;
+    }
+    .todo-input{
+        min-width: 90%;
+    }
+    .select{
+        width: 88%;
+    }
+    .todo-list{
+        width: 90%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 320px){
+    header{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .todo-form{
+        width: 90%;
+    }
+    .todo-input{
+        min-width: 90%;
+    }
+    .select{
+        width: 90%;
+    }
+    .todo-list{
+        width: 90%;
+        margin-top: 80px;
+    }
+    .todo-item{
+        width: 100%;
+    }
+}
